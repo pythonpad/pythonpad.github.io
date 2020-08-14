@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/common.css">
+    <link rel="stylesheet" type="text/css" href="/style/highlightjs/atom-one-light.css">
+    <script src="/script/vue.min.js"></script>
+    <script src="/script/pythonpad.bundle.js"></script>
+    <script src="/script/examples.js"></script>
+    <script src="/script/highlight.pack.js"></script>
+    <script src="/script/lang/xml.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>Pythonpad: Serve Python Programming Exercises with JavaScript</title>
+</head>
+
+<body>
+    <nav class="navbar has-background-grey-lighter" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/images/brand_black.png" class="u-nav-brand">
+            </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">Home</a>
+                <a class="navbar-item">Manual</a>
+                <a class="navbar-item">Code</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="u-padded">
+            <div class="content">
+                <p>
+                    <b>Pythonpad</b> is a programming environment for tiny Python 3 projects implemented in JavaScript for the browser. 
+                    It is designed for serving hands-on exercise problems in online introductory programming classes, and comes with a number of
+                    educational libraries that can help students learning how to program for the first time.
+                </p>
+                <p>
+                    Write auto-grader in Python to give instant feedback to your students. Our in-memory file system with local file import
+                    allows you to easily investigate the student code from your grader code without learning any special functions. 
+                </p>
+                <hr />
+
+                <div class="u-v-padded">
+                    <b>This is Pythonpad.</b>
+                </div>
+                <div class="u-v-padded">
+                    <div class="pad" id="pad-intro"></div>
+                </div>
+                <hr />
+
+                <p>
+                    Pythonpad is a Vue.js component, but we provide a wrapper module that requires no knowledge about Vue.js to use Pythonpad.<br />
+                    <b>The easiest way</b> to use Pythonpad is to simply load the script found under <code>lib/</code> in the distribution,
+                    after loading the Vue.js script.<br />
+                    For example:
+                </p>
+
+                <pre><code class="html">&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"&gt;&lt;/script&gt;<br />&lt;script src="lib/pythonpad.bundle.js"&gt;&lt;/script&gt;</code></pre>
+
+                <p>
+                    When you have loaded the scripts like this, a Pythonpad programming environment can be rendered like this:
+                </p>
+
+                <pre><code class="html">&lt;div id="pad"&gt;&lt;/div&gt;<br />&lt;script&gt;Pythonpad('pad', {src:'print("hello world")'})&lt;/script&gt;</code></pre>
+
+                <p>
+                    This will initialize the programming environment with a piece of code already in it, 
+                    and allow users to save the environment in their web browser using the <code>localStorage</code> object.
+                </p>
+
+                <hr />
+                <p>
+                    Go see more examples to see what else Pythonpad can do,
+                    or read the manual to learn how to customize the Pythonpad instance in your website.
+                </p>
+                <p>
+                    <div class="buttons">
+                        <a class="button">See more examples</a><a class="button">Read the manual</a>
+                    </div>
+                </p>
+                
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        Pythonpad('pad-intro', {
+            title: 'Play with Robots',
+            src: window.examples.intro,
+        })
+    </script>
+</body>
+
+</html>
