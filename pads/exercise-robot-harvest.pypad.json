@@ -1,0 +1,15 @@
+{
+    "id": "exercise-robot-harvest",
+    "title": "Exercise: Harvest",
+    "src": "from cs1robots import *\n\nload_world('harvest1.wld')\nbot = Robot()\nbot.set_trace('blue')\nbot.set_pause(0.2)\n\nbot.move()\nbot.turn_left()\n",
+    "files": {
+        ".grader.py": {
+            "type": "text",
+            "body": "import sys\nimport cs1robots.helper\n\nclass StdoutCollector:\n    def __init__(self):\n        self.data_list = []\n        \n    def __enter__(self):\n        self.stdoutbak = sys.stdout\n        sys.stdout = self\n        return self\n        \n    def __exit__(self, *args):\n        sys.stdout = self.stdoutbak\n        \n    def write(self, data=''):\n        self.data_list.append(str(data))\n\n    def flush(self):\n        pass\n        \n    def get_output(self):\n        return ''.join(self.data_list)\n        \ndef done():\n    f = open('.passed.json', 'w')\n    f.close()\n\ndef grade():\n    f = open('main.py', 'r')\n    code = f.read()\n    f.close()\n    if 'create_world' in code:\n        print('(X) It seems like you do created a world instead of loading the \"harvest1.wld\"!')\n        return\n    if 'harvest1.wld' not in code:\n        print('(X) It seems like you do did not load the world \"harvest1.wld\"!')\n        return\n    collector = StdoutCollector()\n    with collector:\n        import main\n    try:\n        main.bot\n    except:\n        print('(X) It seems like you do not have \"bot\" in your code!')\n        return\n    if cs1robots.helper.get_all_beepers_dict() != {}:\n        print('(X) It seems like your bot did not pick all beepers in the world up!')\n        return\n    print('(V) Well done!')\n    done()\n    \ngrade()"
+        },
+        "harvest1.wld": {
+            "type": "text",
+            "body": "avenues = 7\nstreets = 7\nrobot = (1, 1, 'E', 0)\nwalls = []\nbeepers = {\n    (3, 3): 1, \n    (3, 2): 1, \n    (3, 1): 1, \n    (5, 6): 1, \n    (5, 1): 1, \n    (3, 6): 1, \n    (5, 3): 1, \n    (5, 2): 1, \n    (7, 6): 1, \n    (7, 5): 1, \n    (7, 4): 1, \n    (7, 3): 1, \n    (7, 2): 1, \n    (7, 1): 1, \n    (3, 5): 1, \n    (3, 4): 1, \n    (2, 4): 1, \n    (2, 5): 1, \n    (2, 6): 1, \n    (2, 1): 1, \n    (2, 2): 1, \n    (2, 3): 1, \n    (4, 6): 1, \n    (4, 4): 1, \n    (4, 5): 1, \n    (4, 2): 1, \n    (4, 3): 1, \n    (4, 1): 1, \n    (6, 1): 1, \n    (6, 2): 1, \n    (6, 3): 1, \n    (6, 4): 1, \n    (6, 5): 1, \n    (6, 6): 1, \n    (5, 5): 1, \n    (5, 4): 1\n}"
+        }
+    }
+}

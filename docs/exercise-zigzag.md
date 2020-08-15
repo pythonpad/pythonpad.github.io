@@ -15,3 +15,7 @@ Add a robot named `bot`, and let your robot visit the entire world in a zigzag f
 <a class="button" href="/pad.html?p=exercise-robot-zigzag" target="_blank">
     Open in a new window
 </a>
+
+<hr />
+
+<a href="/docs/exercises.html">Go back to exercise examples</a>
