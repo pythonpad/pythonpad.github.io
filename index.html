@@ -2,18 +2,29 @@
 <html lang="en" class="">
 
 <head>
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon.ico/manifest.json">
     <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/style/common.css">
     <link rel="stylesheet" type="text/css" href="/style/highlightjs/atom-one-light.css">
-    <script src="/script/vue.min.js"></script>
-    <script src="/script/vue-markdown.js"></script>
-    <script src="/script/pythonpad.bundle.js"></script>
     <script src="/script/examples.js"></script>
     <script src="/script/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <title>Pythonpad: Serve Python Programming Exercises with JavaScript</title>
+    <title>Pythonpad.js</title>
 </head>
 
 <body>
@@ -27,9 +38,9 @@
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="/">Home</a>
-                <a class="navbar-item" href="/docs/sandbox.html">Sandbox</a>
                 <a class="navbar-item" href="/docs/examples.html">Examples</a>
                 <a class="navbar-item" href="/docs/manual.html">Manual</a>
+                <a class="navbar-item" href="/docs/sandbox.html">Sandbox</a>
                 <a class="navbar-item" href="https://github.com/pythonpad/pythonpad.js">Download</a>
             </div>
         </div>
@@ -52,18 +63,18 @@
                     <b>This is Pythonpad.</b>
                 </div>
                 <div class="u-v-padded">
-                    <div class="pad" id="pad-intro"></div>
+                    <iframe src="/pad.html?p=robot-intro" class="u-pad-frame" frameborder="0"></iframe>
                 </div>
                 <hr />
 
                 <p>
-                    Pythonpad is a Vue.js component, but we provide a wrapper module that requires no knowledge about Vue.js to use Pythonpad.<br />
+                    Pythonpad is a Vue.js component, but we provide a wrapper module that requires no knowledge about Vue.js to use Pythonpad.
                     <b>The easiest way</b> to use Pythonpad is to simply load the script found under <code>lib/</code> in the distribution,
-                    after loading the Vue.js script.<br />
+                    after loading the font-awesome 4.7 stylesheet and the Vue.js script.<br />
                     For example:
                 </p>
 
-                <pre><code class="html">&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"&gt;&lt;/script&gt;<br />&lt;script src="lib/pythonpad.bundle.js"&gt;&lt;/script&gt;</code></pre>
+                <pre><code class="html">&lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"&gt;<br />&lt;script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"&gt;&lt;/script&gt;<br />&lt;script src="https://cdn.jsdelivr.net/gh/pythonpad/pythonpad.github.io@master/script/pythonpad.bundle.js"&gt;&lt;/script&gt;</code></pre>
 
                 <p>
                     When you have loaded the scripts like this, a Pythonpad programming environment can be rendered like this:
@@ -74,6 +85,18 @@
                 <p>
                     This will initialize the programming environment with a piece of code already in it, 
                     and allow users to save the environment in their web browser using the <code>localStorage</code> object.
+                </p>
+                
+                <p>
+                    Check out our super-simple example on CodePen.
+                    <div class="buttons">
+                        <a class="button" href="https://codepen.io/pythonpadco/pen/Vwaarey" target="_blank">
+                            <span class="icon">
+                                <i class="fa fa-codepen"></i>
+                            </span>
+                            <span>How to use Pythonpad</span>
+                        </a>
+                    </div>
                 </p>
 
                 <hr />
@@ -92,16 +115,6 @@
             </div>
         </div>
     </div>
-    <script>
-        Vue.use(VueMarkdown);
-        [].slice.call(document.getElementsByTagName('vue-markdown'))
-            .map(el => new Vue({ el }))
-        // new Vue({ el: '#app' })
-        Pythonpad('pad-intro', {
-            title: 'Play with Robots',
-            src: window.examples.intro,
-        })
-    </script>
 </body>
 
 </html>
