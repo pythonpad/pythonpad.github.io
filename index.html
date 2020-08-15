@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="/style/common.css">
     <link rel="stylesheet" type="text/css" href="/style/highlightjs/atom-one-light.css">
     <script src="/script/vue.min.js"></script>
+    <script src="/script/vue-markdown.js"></script>
     <script src="/script/pythonpad.bundle.js"></script>
     <script src="/script/examples.js"></script>
     <script src="/script/highlight.pack.js"></script>
-    <script src="/script/lang/xml.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     <title>Pythonpad: Serve Python Programming Exercises with JavaScript</title>
@@ -26,13 +26,15 @@
     
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item">Home</a>
-                <a class="navbar-item">Manual</a>
-                <a class="navbar-item">Code</a>
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/docs/sandbox.html">Sandbox</a>
+                <a class="navbar-item" href="/docs/examples.html">Examples</a>
+                <a class="navbar-item" href="/docs/manual.html">Manual</a>
+                <a class="navbar-item" href="https://github.com/pythonpad/pythonpad.js">Download</a>
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="u-narrow-container">
         <div class="u-padded">
             <div class="content">
                 <p>
@@ -81,7 +83,8 @@
                 </p>
                 <p>
                     <div class="buttons">
-                        <a class="button">See more examples</a><a class="button">Read the manual</a>
+                        <a class="button" href="/docs/examples.html">See more examples</a>
+                        <a class="button" href="/docs/manual.html">Read the manual</a>
                     </div>
                 </p>
                 
@@ -90,6 +93,10 @@
         </div>
     </div>
     <script>
+        Vue.use(VueMarkdown);
+        [].slice.call(document.getElementsByTagName('vue-markdown'))
+            .map(el => new Vue({ el }))
+        // new Vue({ el: '#app' })
         Pythonpad('pad-intro', {
             title: 'Play with Robots',
             src: window.examples.intro,

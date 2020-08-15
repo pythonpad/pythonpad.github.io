@@ -1,0 +1,6 @@
+{
+    "id": "robot-intro",
+    "title": "Play with a Robot",
+    "src": "from cs1robots import *\n\n# Create a blank world.\ncreate_world()\n\n# Create a robot.\nbot = Robot()\nbot.set_trace('blue')\nbot.set_pause(0.5)\n\nbot.move()\nbot.move()\nbot.turn_left()\nbot.move()\n",
+    "files": {}
+}

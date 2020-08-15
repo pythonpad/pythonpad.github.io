@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script>
+        const pathname = window.location.pathname
+        const myPathname = pathname.slice('/pads/'.length, pathname.length - 5)
+        window.location.href = `/pad.html?p=${encodeURIComponent(myPathname)}`            
+    </script>
+    <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/common.css">
+
+    <title>Pythonpad</title>
+</head>
+
+<body>
+    <div class="u-narrow-container u-text-center">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+    </div>
+</body>
+
+</html>

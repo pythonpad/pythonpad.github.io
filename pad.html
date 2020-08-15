@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/common.css">
+    <script src="/script/axios.min.js"></script>
+    <script src="/script/vue.min.js"></script>
+    <script src="/script/pythonpad.bundle.js"></script>
+    <script src="/script/common.js"></script>
+
+    <title>Pythonpad</title>
+</head>
+
+<body style="margin: 0; padding: 0;"></body>
+    <div class="u-fullscreen u-fullscreen-pad" id="pad"></div>
+    <script>
+        async function loadContent() {
+            const params = window.getSearchParameters()
+            window.history.replaceState(null, null, `/pads/${params.p}.html`)
+            try {
+                const res = await axios.get(`/pads/${params.p}.pypad.json`)
+                Pythonpad('pad', res.data)  
+            } catch (err) {
+                console.error(err)
+                document.body.innerHTML = 'Failed to load.'
+            }
+        }
+        loadContent()
+    </script>
+</body>
+
+</html>

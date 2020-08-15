@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/style/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/common.css">
+    <link rel="stylesheet" type="text/css" href="/style/highlightjs/atom-one-light.css">
+    <script src="/script/axios.min.js"></script>
+    <script src="/script/vue.min.js"></script>
+    <script src="/script/vue-markdown.js"></script>
+    <script src="/script/pythonpad.bundle.js"></script>
+    <script src="/script/examples.js"></script>
+    <script src="/script/highlight.pack.js"></script>
+    <script src="/script/common.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>Pythonpad</title>
+</head>
+
+<body>
+    <nav class="navbar has-background-grey-lighter" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="/images/brand_black.png" class="u-nav-brand">
+            </a>
+        </div>
+    
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/docs/sandbox.html">Sandbox</a>
+                <a class="navbar-item" href="/docs/examples.html">Examples</a>
+                <a class="navbar-item" href="/docs/manual.html">Manual</a>
+                <a class="navbar-item" href="https://github.com/pythonpad/pythonpad.js">Download</a>
+            </div>
+        </div>
+    </nav>
+    <div class="u-narrow-container">
+        <div class="u-padded">
+            <div class="content" id="doc">
+                <vue-markdown v-if="source !== null" :source="source"></vue-markdown>
+            </div>
+        </div>
+    </div>
+    <script>
+        Vue.use(VueMarkdown);
+        new Vue({
+            el: '#doc',
+            data: {
+                source: null,
+            },
+            mounted() {
+                this.loadContent()
+            },
+            methods: {
+                async loadContent() {
+                    const params = window.getSearchParameters()
+                    window.history.replaceState(null, null, `/docs/${params.p}.html`)
+                    try {
+                        const res = await axios.get(`/docs/${params.p}.md`)
+                        this.source = res.data
+                    } catch (err) {
+                        this.source = 'Failed to load.'
+                    }
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

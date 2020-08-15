@@ -4,6 +4,31 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.u-fullscreen {
+    height: 100vh;
+    width: 100vw;
+}
+
+.u-fullscreen-pad {
+    font-size: 14px;
+}
+
+.u-pad-frame {
+    max-width: 840px;
+    width: 100%;
+    height: 480px;
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+.u-narrow-container {
+    margin: 0 auto;
+    max-width: 840px;
+    width: 100%;
+}
+
 .u-padded {
     padding: 1rem;
 }
