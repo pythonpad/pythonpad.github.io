@@ -42,7 +42,7 @@ Pythonpad supports cs1graphics library for drawing and manipulating objects on a
 
 Pythonpad supports basic file i/o with its tiny on-memory file system.
 
-<iframe src="/pad.html?fileio-intro" class="u-pad-frame" frameborder="0"></iframe>
+<iframe src="/pad.html?p=fileio-intro" class="u-pad-frame" frameborder="0"></iframe>
 
 <a class="button" href="/pad.html?p=fileio-intro" target="_blank">
     Open in a new window
@@ -52,7 +52,7 @@ Pythonpad supports basic file i/o with its tiny on-memory file system.
 
 Pythonpad supports auto-grading if there is a file `.grader.py` on its file system.
 
-<iframe src="/pad.html?grading-intro" class="u-pad-frame" frameborder="0"></iframe>
+<iframe src="/pad.html?p=grading-intro" class="u-pad-frame" frameborder="0"></iframe>
 
 <a class="button" href="/pad.html?p=grading-intro" target="_blank">
     Open in a new window
@@ -62,8 +62,8 @@ Pythonpad supports auto-grading if there is a file `.grader.py` on its file syst
 
 Pythonpad can be used to serve an interactive programming course on a static website, like this *GitHub Pages* website.
 
-Click the button below to see multiple exercise examples designed for a introductory Python course.
+Click the button below to see exercise more examples designed for a introductory Python course.
 
 <a class="button" href="/docs/exercises.html">
-    See examples
+    See more examples
 </a>

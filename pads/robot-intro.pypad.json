@@ -1,6 +1,11 @@
 {
     "id": "robot-intro",
-    "title": "Play with a Robot",
-    "src": "from cs1robots import *\n\n# Create a blank world.\ncreate_world()\n\n# Create a robot.\nbot = Robot()\nbot.set_trace('blue')\nbot.set_pause(0.5)\n\nbot.move()\nbot.move()\nbot.turn_left()\nbot.move()\n",
-    "files": {}
+    "title": "Hurdles with the Robot",
+    "src": "from cs1robots import *\n\nload_world('hurdles2.wld')\nbot = Robot()\nbot.set_trace('blue')\nbot.set_pause(0.2)\n\ndef turn_right():\n    for i in range(3):\n        bot.turn_left()\n\ndef jump():\n    bot.turn_left()\n    bot.move()\n    turn_right()\n    bot.move()\n    turn_right()\n    bot.move()\n    bot.turn_left()\n\nwhile not bot.on_beeper():\n    if bot.front_is_clear():\n        bot.move()\n    else:\n        jump()\n    \nbot.pick_beeper()",
+    "files": {
+        "hurdles2.wld": {
+            "type": "text",
+            "body": "avenues = 10\nstreets = 10\nrobot = (1, 1, 'E', 0)\nwalls = [\n    (4, 1), \n    (8, 1), \n    (12, 1), \n    (16, 1)\n]\nbeepers = {\n    (7, 1): 1\n}"
+        }
+    }
 }

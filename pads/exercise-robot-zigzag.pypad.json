@@ -1,7 +1,7 @@
 {
-    "id": "robot-zigzag",
-    "title": "Zigzag with Robots",
-    "src": "from cs1robots import *\n\n# Exercise: Zigzag!\n# Use the commented out code below to satisfy the grader. \n\ncreate_world()\nbot = Robot()\nbot.set_trace('blue')\nbot.turn_left()\n\n# def turn_right():\n#     for i in range(3):\n#         bot.turn_left()\n\n# def move_to_wall():\n#     while bot.front_is_clear():\n#         bot.move()\n\n# def touch_the_wall_and_come_back():\n#     move_to_wall()\n#     turn_right()\n#     bot.move()\n#     turn_right()\n#     move_to_wall()\n#     bot.turn_left()\n#     if bot.front_is_clear():\n#         bot.move()\n#         bot.turn_left()\n        \n# for i in range(5):\n#     touch_the_wall_and_come_back()\n",
+    "id": "exercise-robot-zigzag",
+    "title": "Exercise: Zigzag",
+    "src": "from cs1robots import *\n\ncreate_world()\nbot = Robot()\nbot.set_trace('blue')\n\nbot.turn_left()\n",
     "files": {
         ".grader.py": {
             "type": "text",
