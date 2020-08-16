@@ -50,7 +50,7 @@ Pythonpad supports basic file i/o with its tiny on-memory file system.
 
 ### Hands-on Exercise
 
-Pythonpad supports auto-grading if there is a file `.grader.py` on its file system.
+Pythonpad supports auto-grading if there is a file `.grader.py` on its file system. Click on the **Files** button, and then click on the **<i class="fa fa-eye"></i>** button at the top of the file browser that showed up to see hidden files, so that you can see the `.grader.py` file.
 
 <iframe src="/pad.html?p=grading-intro" class="u-pad-frame" frameborder="0"></iframe>
 

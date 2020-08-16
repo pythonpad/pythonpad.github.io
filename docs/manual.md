@@ -55,7 +55,7 @@ You can include following values in the `data` object:
 
 ### Use Sandbox to Create Exercise Projects
 
-One easy way to generate this `data` object, is to use the [Sandbox](/docs/sandbox.html) project which is available on the menu at the top of this web page, or right below this paragraph in this manual page.
+One easy way to generate this `data` object, is to use the [Sandbox](/docs/sandbox.html) project which is available on the menu at the top of this web page, or right here.
 
 <iframe src="/pad.html?p=sandbox" class="u-pad-frame" frameborder="0"></iframe>
 
@@ -93,5 +93,3 @@ Try embedding a customized Python programming environment in a static website wi
         <span>How to use Pythonpad</span>
     </a>
 </div>
-
-<div style="height: 5rem"> <!-- vspace -->
