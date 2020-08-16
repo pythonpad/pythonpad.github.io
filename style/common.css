@@ -4,6 +4,15 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+pre {
+    padding: 0 !important;
+}
+
+pre code {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
 .u-fullscreen {
     height: 100vh;
     width: 100vw;
